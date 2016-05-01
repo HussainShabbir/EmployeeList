@@ -133,11 +133,12 @@
     return _fetchedResultsController;
 }
 
-- (void)configureCell:(EMPLTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(id)cellObj atIndexPath:(NSIndexPath *)indexPath
 {
     if (self.tableViewData && self.tableViewData.count > indexPath.row)
     {
         EMPLEmpModel *empModel = [self.tableViewData objectAtIndex:indexPath.row];
+        EMPLTableViewCell *cell = (EMPLTableViewCell *)cellObj;
         cell.imageVw.image = [UIImage imageWithData:empModel.image];
         cell.name.text = empModel.fullName;
         cell.designation.text = empModel.designation;
