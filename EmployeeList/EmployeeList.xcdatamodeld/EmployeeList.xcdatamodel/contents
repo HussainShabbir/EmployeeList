@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E64" minimumToolsVersion="Automatic">
+    <entity name="Company" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="empCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="industry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkedinUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="revenue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="employee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="company" inverseEntity="Employee" syncable="YES"/>
+    </entity>
+    <entity name="Employee" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cellNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="designation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employeeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employee" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Company" positionX="171" positionY="20" width="128" height="193"/>
+        <element name="Employee" positionX="-47" positionY="9" width="128" height="195"/>
+    </elements>
+</model>
