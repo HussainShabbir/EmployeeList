@@ -8,6 +8,7 @@
 
 #import "EMPLViewController.h"
 #import "EMPLTableViewCell.h"
+#import "EMPLCompTableVwCell.h"
 #import "EMPLAppDelegate.h"
 #import "EMPLempModel.h"
 #import "EMPLCompanyModel.h"
@@ -152,6 +153,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EMPLTableViewCell *cell = (EMPLTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+//    EMPLCompTableVwCell *cell = (EMPLCompTableVwCell*)[tableView dequeueReusableCellWithIdentifier:@"reuseCompanyIdenifier"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -215,7 +217,7 @@
     if ([segue.identifier isEqualToString:@"infoVwIdentifier"])
     {
         EMPLInfoVwController *destinationVwController = segue.destinationViewController;
-        EMPLEmpModel *empModel = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        EMPLEmpModel *empModel = self.tableViewData[self.tableView.indexPathForSelectedRow.row];
         destinationVwController.detail = empModel;
     }
 }
