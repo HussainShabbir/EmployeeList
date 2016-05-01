@@ -24,7 +24,6 @@
     self.sortBtn.layer.cornerRadius = 5.0;
     EMPLAppDelegate *appDelegate = (EMPLAppDelegate*)[[UIApplication sharedApplication]delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
-    
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     if ([sectionInfo numberOfObjects] == 0)
     {
@@ -146,13 +145,7 @@
     }
 }
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return [[self.fetchedResultsController sections] count];
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-//    return [sectionInfo numberOfObjects];
     return self.tableViewData.count;
 }
 
@@ -267,6 +260,7 @@
         self.tableViewData = self.fetchedResultsController.fetchedObjects;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
+    [self.view endEditing:YES];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -279,10 +273,9 @@
         if (array && array.count > 0)
         {
             self.tableViewData = array;
-            NSLog(@"%ld",self.tableViewData.count);
         }
     }
-    [self.tableView reloadData];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [searchBar resignFirstResponder];
 }
 
