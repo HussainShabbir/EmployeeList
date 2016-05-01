@@ -30,6 +30,7 @@
 		173BFD031CD5265000439CC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173BFD011CD5265000439CC7 /* LaunchScreen.storyboard */; };
 		173BFD0E1CD5265000439CC7 /* EmployeeListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173BFD0D1CD5265000439CC7 /* EmployeeListTests.m */; };
 		178FE7FB1CD6BB5E002FE850 /* EMPLCompTableVwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7FA1CD6BB5E002FE850 /* EMPLCompTableVwCell.m */; };
+		178FE7FE1CD6BFF3002FE850 /* EMPLComInfoVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7FD1CD6BFF3002FE850 /* EMPLComInfoVwController.m */; };
 		17CD2DCC1CD60B6800A5EC69 /* EMPLInfoVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CD2DCB1CD60B6800A5EC69 /* EMPLInfoVwController.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		173BFD0F1CD5265000439CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178FE7F91CD6BB5E002FE850 /* EMPLCompTableVwCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPLCompTableVwCell.h; sourceTree = "<group>"; };
 		178FE7FA1CD6BB5E002FE850 /* EMPLCompTableVwCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLCompTableVwCell.m; sourceTree = "<group>"; };
+		178FE7FC1CD6BFF3002FE850 /* EMPLComInfoVwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPLComInfoVwController.h; sourceTree = "<group>"; };
+		178FE7FD1CD6BFF3002FE850 /* EMPLComInfoVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLComInfoVwController.m; sourceTree = "<group>"; };
 		17CD2DCA1CD60B6800A5EC69 /* EMPLInfoVwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPLInfoVwController.h; sourceTree = "<group>"; };
 		17CD2DCB1CD60B6800A5EC69 /* EMPLInfoVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLInfoVwController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +152,8 @@
 				173BFCF71CD5265000439CC7 /* EMPLViewController.m */,
 				17CD2DCA1CD60B6800A5EC69 /* EMPLInfoVwController.h */,
 				17CD2DCB1CD60B6800A5EC69 /* EMPLInfoVwController.m */,
+				178FE7FC1CD6BFF3002FE850 /* EMPLComInfoVwController.h */,
+				178FE7FD1CD6BFF3002FE850 /* EMPLComInfoVwController.m */,
 				172589A71CD54D60003960A7 /* EMPLTableViewCell.h */,
 				172589A81CD54D60003960A7 /* EMPLTableViewCell.m */,
 				178FE7F91CD6BB5E002FE850 /* EMPLCompTableVwCell.h */,
@@ -299,6 +304,7 @@
 				17CD2DCC1CD60B6800A5EC69 /* EMPLInfoVwController.m in Sources */,
 				173BFCF21CD5265000439CC7 /* main.m in Sources */,
 				172589A91CD54D60003960A7 /* EMPLTableViewCell.m in Sources */,
+				178FE7FE1CD6BFF3002FE850 /* EMPLComInfoVwController.m in Sources */,
 				172589AF1CD56671003960A7 /* EMPLEmpModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
