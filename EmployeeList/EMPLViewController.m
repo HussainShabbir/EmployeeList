@@ -264,6 +264,7 @@
         // Handle you error here
     }
     else{
+        self.tableViewData = self.fetchedResultsController.fetchedObjects;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
