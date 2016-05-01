@@ -5,6 +5,7 @@
         <attribute name="companyId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="empCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="industry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkedinUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNo" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,7 +26,7 @@
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employee" inverseEntity="Company" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Company" positionX="171" positionY="20" width="128" height="193"/>
+        <element name="Company" positionX="171" positionY="20" width="128" height="210"/>
         <element name="Employee" positionX="-47" positionY="9" width="128" height="195"/>
     </elements>
 </model>

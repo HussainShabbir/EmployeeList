@@ -20,6 +20,7 @@
 @dynamic revenue;
 @dynamic website;
 @dynamic employee;
+@dynamic image;
 
 
 -(id)initWithCompanyName:(NSString*)companyName andAddress:(NSString*)address andCompanyId:(NSString*)companyId andEmpCount:(NSNumber*)empCount andIndustry:(NSString*)industry andLinkedinUrl:(NSString*)linkedinUrl andPhoneNo:(NSString*)phoneNo andRevenue:(NSNumber*)revenue andWebsite:(NSString*)website

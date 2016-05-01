@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSString *phoneNo;
 @property (nonatomic,strong) NSNumber *revenue;
 @property (nonatomic,strong) NSString *website;
+@property (nonatomic,strong) NSData *image;
 @property (nonatomic,strong) NSSet *employee;
 
 -(id)initWithCompanyName:(NSString*)companyName andAddress:(NSString*)address andCompanyId:(NSString*)companyId andEmpCount:(NSNumber*)empCount andIndustry:(NSString*)industry andLinkedinUrl:(NSString*)linkedinUrl andPhoneNo:(NSString*)phoneNo andRevenue:(NSNumber*)revenue andWebsite:(NSString*)website;
