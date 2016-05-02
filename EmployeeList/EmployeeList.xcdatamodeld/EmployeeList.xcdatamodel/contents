@@ -9,7 +9,7 @@
         <attribute name="industry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkedinUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="revenue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="revenue" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="employee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="company" inverseEntity="Employee" syncable="YES"/>
     </entity>

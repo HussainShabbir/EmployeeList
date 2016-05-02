@@ -13,5 +13,6 @@
 @property (nonatomic,weak) IBOutlet UILabel *companyNm;
 @property (nonatomic,weak) IBOutlet UILabel *companyWebSt;
 @property (nonatomic,weak) IBOutlet UILabel *companyDesc;
+@property (nonatomic,weak) IBOutlet UIImageView *companyImg;
 
 @end
