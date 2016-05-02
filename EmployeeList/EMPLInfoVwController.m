@@ -8,7 +8,6 @@
 
 #import "EMPLInfoVwController.h"
 #import "EMPLEmpModel.h"
-#import <objc/runtime.h>
 
 @interface EMPLInfoVwController ()
 @property (nonatomic,strong)EMPLEmpModel *empModel;

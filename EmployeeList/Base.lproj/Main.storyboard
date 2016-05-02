@@ -236,8 +236,8 @@
                                             <action selector="doCancel:" destination="YMb-0k-Jpm" eventType="touchUpInside" id="Z6i-Lt-RoH"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln6-yW-DPM">
-                                        <rect key="frame" x="239" y="33" width="121" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln6-yW-DPM">
+                                        <rect key="frame" x="247" y="33" width="106" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -252,7 +252,7 @@
                                     <constraint firstItem="q5o-Gf-rY9" firstAttribute="leading" secondItem="aV1-OG-ohX" secondAttribute="leading" constant="7" id="uJa-Hc-X5c"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gp-Zn-gHx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gp-Zn-gHx">
                                 <rect key="frame" x="0.0" y="68" width="600" height="532"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2rm-KY-oo2">
@@ -290,6 +290,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="YMb-0k-Jpm" id="iIp-NO-WW2"/>
+                                            <outlet property="delegate" destination="YMb-0k-Jpm" id="O8D-eN-2bs"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>

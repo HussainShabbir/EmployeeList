@@ -13,6 +13,7 @@
 #import "EMPLempModel.h"
 #import "EMPLCompanyModel.h"
 #import "EMPLInfoVwController.h"
+#import "EMPLComInfoVwController.h"
 
 @interface EMPLViewController ()
 @property (nonatomic,strong) NSArray *tableViewData;
@@ -257,40 +258,61 @@
         EMPLEmpModel *empModel = self.tableViewData[self.tableView.indexPathForSelectedRow.row];
         destinationVwController.detail = empModel;
     }
+    else if ([segue.identifier isEqualToString:@"comInfoVwIdentifier"])
+    {
+        EMPLComInfoVwController *destinationVwController = segue.destinationViewController;
+        EMPLCompanyModel *companyModel = self.tableViewData[self.tableView.indexPathForSelectedRow.row];
+        destinationVwController.detail = companyModel;
+    }
 }
 
 -(IBAction)sortByAction:(id)sender{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sorted By" message:@"Select the below options:" preferredStyle:UIAlertControllerStyleActionSheet];
 
-    UIAlertAction *sortedNmAction = [UIAlertAction actionWithTitle:@"Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self sortBy:@"fullName"];
-    }];
-    [alertController addAction:sortedNmAction];
+    if (self.shouldDisplay){
+        UIAlertAction *sortedNmAction = [UIAlertAction actionWithTitle:@"Company Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByCompany:@"companyName"];
+        }];
+        [alertController addAction:sortedNmAction];
+        
+        UIAlertAction *sortedIdAction = [UIAlertAction actionWithTitle:@"Company Id" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByCompany:@"companyId"];
+        }];
+        [alertController addAction:sortedIdAction];
+    }
     
-    UIAlertAction *sortedEmlAction = [UIAlertAction actionWithTitle:@"Email" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self sortBy:@"email"];
-    }];
-    [alertController addAction:sortedEmlAction];
-    
-    UIAlertAction *sortedAddrAction = [UIAlertAction actionWithTitle:@"Address" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self sortBy:@"address"];
-    }];
-    [alertController addAction:sortedAddrAction];
-    
-    UIAlertAction *sortedDesigntnAction = [UIAlertAction actionWithTitle:@"Designation" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self sortBy:@"designation"];
-    }];
-    [alertController addAction:sortedDesigntnAction];
-    
+    else{
+        UIAlertAction *sortedNmAction = [UIAlertAction actionWithTitle:@"Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByEmployee:@"fullName"];
+        }];
+        [alertController addAction:sortedNmAction];
+        
+        UIAlertAction *sortedEmlAction = [UIAlertAction actionWithTitle:@"Email" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByEmployee:@"email"];
+        }];
+        [alertController addAction:sortedEmlAction];
+        
+        UIAlertAction *sortedAddrAction = [UIAlertAction actionWithTitle:@"Address" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByEmployee:@"address"];
+        }];
+        [alertController addAction:sortedAddrAction];
+        
+        UIAlertAction *sortedDesigntnAction = [UIAlertAction actionWithTitle:@"Designation" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self sortByEmployee:@"designation"];
+        }];
+        [alertController addAction:sortedDesigntnAction];
+        
+    }
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }];
     [alertController addAction:cancelAction];
-    
     [self presentViewController:alertController animated:YES completion:^{
+        [self.view endEditing:YES];
     }];
+        
 }
 
--(void)sortBy:(NSString*)sortedOption{
+-(void)sortByEmployee:(NSString*)sortedOption{
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortedOption ascending:YES];
     [[self.fetchedResultsController fetchRequest]setSortDescriptors:@[sortDescriptor]];
     NSError *error;
@@ -301,24 +323,52 @@
         self.tableViewData = self.fetchedResultsController.fetchedObjects;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
-    [self.view endEditing:YES];
+}
+
+-(void)sortByCompany:(NSString*)sortedOption{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortedOption ascending:YES];
+    [[self.fetchedCompResultsController fetchRequest]setSortDescriptors:@[sortDescriptor]];
+    NSError *error;
+    if (![[self fetchedCompResultsController] performFetch:&error]) {
+        // Handle you error here
+    }
+    else{
+        self.tableViewData = self.fetchedCompResultsController.fetchedObjects;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSString *filterText = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    self.tableViewData = self.fetchedResultsController.fetchedObjects;
-    if (filterText.length > 0)
-    {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fullName CONTAINS[CD] %@", filterText];
-        NSArray *array = [[self.fetchedResultsController fetchedObjects]filteredArrayUsingPredicate:predicate];
-        if (array && array.count > 0)
+    if (self.shouldDisplay){
+        self.tableViewData = self.fetchedCompResultsController.fetchedObjects;
+        if (filterText.length > 0)
         {
-            self.tableViewData = array;
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"companyName CONTAINS[CD] %@", filterText];
+            NSArray *array = [[self.fetchedCompResultsController fetchedObjects]filteredArrayUsingPredicate:predicate];
+            if (array && array.count > 0)
+            {
+                self.tableViewData = array;
+            }
         }
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    else{
+        self.tableViewData = self.fetchedResultsController.fetchedObjects;
+        if (filterText.length > 0)
+        {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fullName CONTAINS[CD] %@", filterText];
+            NSArray *array = [[self.fetchedResultsController fetchedObjects]filteredArrayUsingPredicate:predicate];
+            if (array && array.count > 0)
+            {
+                self.tableViewData = array;
+            }
+        }
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
     [searchBar resignFirstResponder];
 }
+
 
 -(IBAction)changeSegmentControl:(UISegmentedControl*)sender
 {

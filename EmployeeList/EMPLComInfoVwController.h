@@ -12,4 +12,6 @@
 
 @property (nonatomic,weak)IBOutlet UIImageView *imageVw;
 
+@property (nonatomic,strong) id detail;
+
 @end
