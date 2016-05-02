@@ -31,6 +31,11 @@
 		173BFD0E1CD5265000439CC7 /* EmployeeListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173BFD0D1CD5265000439CC7 /* EmployeeListTests.m */; };
 		178FE7FB1CD6BB5E002FE850 /* EMPLCompTableVwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7FA1CD6BB5E002FE850 /* EMPLCompTableVwCell.m */; };
 		178FE7FE1CD6BFF3002FE850 /* EMPLComInfoVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7FD1CD6BFF3002FE850 /* EMPLComInfoVwController.m */; };
+		178FE8041CD6D37D002FE850 /* apple.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 178FE7FF1CD6D37D002FE850 /* apple.jpeg */; };
+		178FE8051CD6D37D002FE850 /* cognizant.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 178FE8001CD6D37D002FE850 /* cognizant.jpeg */; };
+		178FE8061CD6D37D002FE850 /* infosys.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 178FE8011CD6D37D002FE850 /* infosys.jpeg */; };
+		178FE8071CD6D37D002FE850 /* tcs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 178FE8021CD6D37D002FE850 /* tcs.jpeg */; };
+		178FE8081CD6D37D002FE850 /* wipro.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 178FE8031CD6D37D002FE850 /* wipro.jpeg */; };
 		17CD2DCC1CD60B6800A5EC69 /* EMPLInfoVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CD2DCB1CD60B6800A5EC69 /* EMPLInfoVwController.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,11 @@
 		178FE7FA1CD6BB5E002FE850 /* EMPLCompTableVwCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLCompTableVwCell.m; sourceTree = "<group>"; };
 		178FE7FC1CD6BFF3002FE850 /* EMPLComInfoVwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPLComInfoVwController.h; sourceTree = "<group>"; };
 		178FE7FD1CD6BFF3002FE850 /* EMPLComInfoVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLComInfoVwController.m; sourceTree = "<group>"; };
+		178FE7FF1CD6D37D002FE850 /* apple.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpeg; sourceTree = "<group>"; };
+		178FE8001CD6D37D002FE850 /* cognizant.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cognizant.jpeg; sourceTree = "<group>"; };
+		178FE8011CD6D37D002FE850 /* infosys.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = infosys.jpeg; sourceTree = "<group>"; };
+		178FE8021CD6D37D002FE850 /* tcs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tcs.jpeg; sourceTree = "<group>"; };
+		178FE8031CD6D37D002FE850 /* wipro.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wipro.jpeg; sourceTree = "<group>"; };
 		17CD2DCA1CD60B6800A5EC69 /* EMPLInfoVwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMPLInfoVwController.h; sourceTree = "<group>"; };
 		17CD2DCB1CD60B6800A5EC69 /* EMPLInfoVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMPLInfoVwController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +126,11 @@
 				172589C21CD5FE9C003960A7 /* tim_Coterill.jpeg */,
 				172589C61CD5FEC7003960A7 /* mark_David.jpeg */,
 				172589C81CD5FEFB003960A7 /* sheryyl_Rose.jpeg */,
+				178FE7FF1CD6D37D002FE850 /* apple.jpeg */,
+				178FE8001CD6D37D002FE850 /* cognizant.jpeg */,
+				178FE8011CD6D37D002FE850 /* infosys.jpeg */,
+				178FE8021CD6D37D002FE850 /* tcs.jpeg */,
+				178FE8031CD6D37D002FE850 /* wipro.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -271,14 +286,19 @@
 				172589B51CD5C143003960A7 /* flower.jpeg in Resources */,
 				173BFD031CD5265000439CC7 /* LaunchScreen.storyboard in Resources */,
 				172589C11CD5FE85003960A7 /* ross_Jerry.jpeg in Resources */,
+				178FE8081CD6D37D002FE850 /* wipro.jpeg in Resources */,
 				173BFD001CD5265000439CC7 /* Assets.xcassets in Resources */,
 				172589C71CD5FEC7003960A7 /* mark_David.jpeg in Resources */,
+				178FE8071CD6D37D002FE850 /* tcs.jpeg in Resources */,
 				172589BC1CD5FABD003960A7 /* rayan_John.jpeg in Resources */,
 				172589BF1CD5FE6F003960A7 /* peter_Hosey.jpeg in Resources */,
 				172589BA1CD5FABD003960A7 /* john_Smith.jpeg in Resources */,
 				172589C91CD5FEFB003960A7 /* sheryyl_Rose.jpeg in Resources */,
 				173BFCFB1CD5265000439CC7 /* Main.storyboard in Resources */,
+				178FE8041CD6D37D002FE850 /* apple.jpeg in Resources */,
 				172589BB1CD5FABD003960A7 /* peter_Mark.jpeg in Resources */,
+				178FE8061CD6D37D002FE850 /* infosys.jpeg in Resources */,
+				178FE8051CD6D37D002FE850 /* cognizant.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

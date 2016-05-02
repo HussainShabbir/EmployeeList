@@ -21,13 +21,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zao-tO-Idz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yx1-0c-j5P">
+                                    <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yx1-0c-j5P">
                                         <rect key="frame" x="226" y="21" width="147" height="29"/>
                                         <segments>
                                             <segment title="Employee"/>
                                             <segment title="Company"/>
                                         </segments>
                                         <color key="tintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="changeSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="9QY-nc-xNR"/>
+                                        </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bek-Sn-oOE">
                                         <rect key="frame" x="544" y="21" width="40" height="30"/>
