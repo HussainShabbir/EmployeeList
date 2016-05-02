@@ -14,8 +14,10 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedCompResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong,nonatomic) IBOutlet UITableView *tableView;
-@property (strong,nonatomic) IBOutlet UIButton *sortBtn;
+@property (weak,nonatomic) IBOutlet UITableView *tableView;
+@property (weak,nonatomic) IBOutlet UIButton *sortBtn;
+@property (weak,nonatomic) IBOutlet UIButton *refreshBtn;
+@property (weak,nonatomic) IBOutlet UILabel *errLabel;
 
 @end
 

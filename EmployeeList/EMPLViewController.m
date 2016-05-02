@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.sortBtn.layer.cornerRadius = 5.0;
+    self.refreshBtn.layer.cornerRadius = 5.0;
+    self.errLabel.hidden = YES;
+    [self.view addSubview:self.errLabel];
     EMPLAppDelegate *appDelegate = (EMPLAppDelegate*)[[UIApplication sharedApplication]delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
@@ -349,6 +352,12 @@
             if (array && array.count > 0)
             {
                 self.tableViewData = array;
+                self.errLabel.hidden = YES;
+            }
+            else
+            {
+                self.tableViewData = nil;
+                self.errLabel.hidden = NO;
             }
         }
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
@@ -362,6 +371,12 @@
             if (array && array.count > 0)
             {
                 self.tableViewData = array;
+                self.errLabel.hidden = YES;
+            }
+            else
+            {
+                self.tableViewData = nil;
+                self.errLabel.hidden = NO;
             }
         }
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
@@ -384,6 +399,22 @@
         self.tableViewData = self.fetchedResultsController.fetchedObjects;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
+    self.errLabel.hidden = YES;
+    [self.view endEditing:YES];
+}
+
+-(IBAction)doRefresh:(id)sender
+{
+    if (self.shouldDisplay){
+        self.tableViewData = self.fetchedCompResultsController.fetchedObjects;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else{
+        self.tableViewData = self.fetchedResultsController.fetchedObjects;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    self.errLabel.hidden = YES;
+    [self.view endEditing:YES];
 }
 
 -(void)employeeDummyData{
